@@ -7,8 +7,8 @@ const urlContainer = document.querySelector(".main__profile-url");
 
 
 
-Const Client_ID: Iv1.f31cc8f9b2d65eed
+const Client_ID= "Iv1.f31cc8f9b2d65eed";
 
-Const secret_ID: 051782808038d3d46977a6ebb24fe2b5a4f0620c
+const secret_ID= "051782808038d3d46977a6ebb24fe2b5a4f0620c";
 
- searchButton.addEventListner("click",()=>{console.log("Hello");})
+ searchButton.addEventListener("click",()=>{console.log("Hello");})
