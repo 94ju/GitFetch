@@ -36,7 +36,16 @@ const showData =() => {
 
   })
   fectchrepos(inputValue.value).then((rep)=>{
+    var i=0;
     console.log(rep);
+
+
+      for(i;i<14;i++){
+        console.log(rep.data_repos[i].name);
+
+      }
+
+    console.log("check");
 
   })
 };
