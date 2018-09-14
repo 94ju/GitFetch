@@ -13,26 +13,31 @@ const client_secret = "051782808038d3d46977a6ebb24fe2b5a4f0620c";
 
 const fectchUsers = async(user) => {
 const api_call =await fetch('https://api.github.com/users/'+user+'?client_id='+client_id+'&client_secret='+client_secret);
-
+const api_call_repos =await fetch(' https://api.github.com/users/'+user+'/repos');
   const data = await api_call.json();
+  const data_repos = await api_call_repos.json();
   return{data};
+};
+const fectchrepos = async(user) => {
+
+const api_call_repos =await fetch(' https://api.github.com/users/'+user+'/repos');
+const data_repos = await api_call_repos.json();
+return{data_repos};
 };
 
 const showData =() => {
   fectchUsers(inputValue.value).then((res)=>{
     console.log(res);
-    // var name = res.data.login;
-    // console.log(name);
-    // document.getElementById("Name").innerHTML = name;
-    // getElementByClassName('nameContainer').innerHTML ='Name:<span class = "main__profile-value">+ res.data.name + <span>'
-    // nameContainer.innerHTML='Name:<span class = "main__profile-value" id="Name">  </span>';
+
     urlContainer.innerHTML = 'URL:<span class ="main__profile-value">'+res.data.url+' </span>';
      reposContainer.innerHTML = 'Public Repositories:<span class ="main__profile-value">'+res.data.public_repos+' </span>';
      unContainer.innerHTML = 'Followers:<span class ="main__profile-value">'+res.data.followers+' </span>';
      nameContainer.innerHTML = 'Name:<span class ="main__profile-value">'+res.data.name+' </span>';
-    //  urlContainer.innerHTML = 'URL:${res.data.login}';
-   // nameContainer.innerHTML ='Name:<span class = "main__profile-value"> res.data.login]  <span>;
-  //  nameContainer.innerHTML = res.data.name ;
+
+  })
+  fectchrepos(inputValue.value).then((rep)=>{
+    console.log(rep);
+
   })
 };
 
