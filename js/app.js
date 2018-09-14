@@ -21,9 +21,22 @@ const api_call =await fetch('https://api.github.com/users/'+user+'?client_id='+c
 const showData =() => {
   fectchUsers(inputValue.value).then((res)=>{
     console.log(res);
+    // var name = res.data.login;
+    // console.log(name);
+    // document.getElementById("Name").innerHTML = name;
+    // getElementByClassName('nameContainer').innerHTML ='Name:<span class = "main__profile-value">+ res.data.name + <span>'
+    // nameContainer.innerHTML='Name:<span class = "main__profile-value" id="Name">  </span>';
+    urlContainer.innerHTML = 'URL:<span class ="main__profile-value">'+res.data.url+' </span>';
+     reposContainer.innerHTML = 'Public Repositories:<span class ="main__profile-value">'+res.data.public_repos+' </span>';
+     unContainer.innerHTML = 'Followers:<span class ="main__profile-value">'+res.data.followers+' </span>';
+     nameContainer.innerHTML = 'Name:<span class ="main__profile-value">'+res.data.name+' </span>';
+    //  urlContainer.innerHTML = 'URL:${res.data.login}';
+   // nameContainer.innerHTML ='Name:<span class = "main__profile-value"> res.data.login]  <span>;
+  //  nameContainer.innerHTML = res.data.name ;
   })
 };
 
  searchButton.addEventListener("click",()=>{
+   console.log("Hello");
    showData();
  })
