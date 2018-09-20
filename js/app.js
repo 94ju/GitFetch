@@ -1,6 +1,6 @@
 const inputValue = document.querySelector("#search");
 const searchButton = document.querySelector(".searchButton");
-const ReposButton = document.querySelector(".ReposButton");
+
 const nameContainer = document.querySelector(".main__profile-name");
 const unContainer = document.querySelector(".main__profile-username");
 const reposContainer = document.querySelector(".main__profile-repos");
@@ -43,17 +43,8 @@ const showData =() => {
 
     console.log("check");
   })
-  // fectchrepos(inputValue.value).then((rep)=>{
-  //
-  //   var i=0;
-  //   console.log(rep);
-  //     for(i;i<20;i++){
-  //       console.log(rep.data_repos[i].name);
-  //     }
-  //   console.log("check");
-  // })
 };
-const showRepos =(user) =>{
+const showRepos =() =>{
   fectchrepos(inputValue.value).then((rep)=>{
     repos.innerHTML = 'Name:<span class ="main__profile-value">'+rep.data_repos[0].name+' </span>';
     var i=0;
@@ -68,9 +59,9 @@ searchButton.addEventListener("click",()=>{
    console.log("Hello");
    showData();
 })
-ReposButton.addEventListener("click",()=>{
-   console.log("Hello");
-    showRepos();
-  window.location.replace("repos.html");
+repos.addEventListener("click",()=>{
+   console.log("Hello00");
+   showRepos();
+   window.location.replace("repos.html");
 
 })
