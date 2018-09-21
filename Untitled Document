@@ -7,6 +7,10 @@ git issues
 
 https://api.github.com/repos/facebook/create-react-app/issues
 
+git repo single issue
+
+https://api.github.com/repos/facebook/create-react-app/issues/1
+
 git millestones 
 
 https://api.github.com/repos/facebook/create-react-app/milestones
