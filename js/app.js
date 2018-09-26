@@ -19,6 +19,13 @@ const fectchUsers = async(user) => {
 };
 const fectchrepos = async(user) => {
   const api_call_repos =await fetch(' https://api.github.com/users/'+user+'/repos');
+  // const api_call_repos =await fetch(' https://api.github.com/user/repos?access_token=fe272a48b06680e8298b8640a60fd0d559b3e321');
+  const data_repos = await api_call_repos.json();
+  return{data_repos};
+};
+const fectprivatechrepos = async(user) => {
+  // const api_call_repos =await fetch(' https://api.github.com/users/'+user+'/repos');
+  const api_call_repos =await fetch(' https://api.github.com/user/repos?access_token=42579f0bd39cc1e053f97e0c6140bc9a1e5777de');
   const data_repos = await api_call_repos.json();
   return{data_repos};
 };
@@ -55,10 +62,22 @@ const showRepos =() =>{
     console.log("check1111");
   })
 }
+const showprivateRepos =() =>{
+fectprivatechrepos(inputValue.value).then((repp)=>{
+
+    var i=0;
+    console.log(repp);
+      for(i;i<20;i++){
+        console.log(repp.data_repos[i].name);
+      }
+    console.log("check1111");
+  })
+}
 searchButton.addEventListener("click",()=>{
    console.log("Hello");
    showData();
    showRepos();
+   showprivateRepos();
 })
 // repos.addEventListener("click",()=>{
 //    console.log("Hello00");
