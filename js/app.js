@@ -46,22 +46,23 @@ const showData =() => {
 };
 const showRepos =() =>{
   fectchrepos(inputValue.value).then((rep)=>{
-    repos.innerHTML = 'Name:<span class ="main__profile-value">'+rep.data_repos[0].name+' </span>';
+
     var i=0;
     console.log(rep);
       for(i;i<20;i++){
         console.log(rep.data_repos[i].name);
       }
-    console.log("check");
+    console.log("check1111");
   })
 }
 searchButton.addEventListener("click",()=>{
    console.log("Hello");
    showData();
-})
-repos.addEventListener("click",()=>{
-   console.log("Hello00");
    showRepos();
-   window.location.replace("repos.html");
-
 })
+// repos.addEventListener("click",()=>{
+//    console.log("Hello00");
+//    showRepos();
+//    window.location.replace("repos.html");
+//
+// })
