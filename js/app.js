@@ -25,7 +25,7 @@ const fectchrepos = async(user) => {
 };
 const fectprivatechrepos = async(user) => {
   // const api_call_repos =await fetch(' https://api.github.com/users/'+user+'/repos');
-  const api_call_repos =await fetch(' https://api.github.com/user/repos?access_token=42579f0bd39cc1e053f97e0c6140bc9a1e5777de');
+  const api_call_repos =await fetch(' https://api.github.com/user/repos?access_token=f33d1f112b7883456c990028539a22143243aea9');
   const data_repos = await api_call_repos.json();
   return{data_repos};
 };
